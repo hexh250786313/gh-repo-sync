@@ -1,0 +1,24 @@
+{
+  "name": "gh-repo-sync",
+  "version": "0.0.0-development",
+  "description": "Running multiple \"gh repo sync owner/cli-fork\" commands to help sync all your forked GitHub repos",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hexh250786313/gh-repo-sync.git"
+  },
+  "keywords": [
+    "gh",
+    "sync",
+    "node"
+  ],
+  "author": "hexh<250786313@qq.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hexh250786313/gh-repo-sync/issues"
+  },
+  "homepage": "https://github.com/hexh250786313/gh-repo-sync#readme"
+}
