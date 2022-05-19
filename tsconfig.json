@@ -1,16 +1,17 @@
 {
   "compilerOptions": {
-    "target": "es2017",
-    "lib": ["es2017", "es2018"],
+    "alwaysStrict": true,
     "module": "commonjs",
-    "declaration": false,
-    "sourceMap": true,
-    "outDir": "lib",
-    "strict": true,
     "moduleResolution": "node",
-    "noImplicitAny": false,
-    "esModuleInterop": true
+    "target": "es2017",
+    "outDir": "lib",
+    "rootDir": "src",
+    "lib": ["es2017"],
+    "sourceMap": true,
+    "declaration": false
   },
-  "include": ["src"],
+  "typeRoots": ["node_modules", "node_modules/@types", "definitions"],
+  "include": ["src/**/*.ts", "src/*.ts"],
+  "exclude": ["node_modules", "lib", "__tests__", "__mocks__"],
   "extends": "@tsconfig/recommended/tsconfig.json"
 }
