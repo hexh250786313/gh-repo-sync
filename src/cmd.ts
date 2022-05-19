@@ -1,7 +1,7 @@
 import { readJsonSync } from "fs-extra";
 import { resolve } from "path";
 import { program } from "commander";
-import runCommand from "./util/run-command";
+import runCommand from "./utils/run-command";
 import ora from "ora";
 import { dots } from "cli-spinners";
 import chalk from "chalk";

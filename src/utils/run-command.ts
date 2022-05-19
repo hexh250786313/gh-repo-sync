@@ -1,13 +1,14 @@
 import { exec, ExecOptions } from "child_process";
+import { platform } from "os";
 
-export default function runCommand(
+export default function (
   cmd: string,
   opts: ExecOptions = {},
   timeout?: number
 ): Promise<string> {
-  // if (!platform.isWindows) {
-  // opts.shell = opts.shell || process.env.SHELL;
-  // }
+  if (platform() === "win32") {
+    opts.shell = opts.shell || process.env.SHELL;
+  }
   opts.maxBuffer = 500 * 1024;
   return new Promise<string>((resolve, reject) => {
     let timer: NodeJS.Timer;
@@ -23,10 +24,10 @@ export default function runCommand(
         return;
       }
       // @todo: dev code
-      // resolve(stdout);
-      setTimeout(() => {
-        Math.random() > 0.5 ? resolve(stdout) : reject(new Error("hello"));
-      }, 1000);
+      resolve(stdout);
+      // setTimeout(() => {
+      // Math.random() > 0.5 ? resolve(stdout) : reject(new Error("hello"));
+      // }, 1000);
     });
   });
 }
