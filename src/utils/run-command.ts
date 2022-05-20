@@ -1,9 +1,15 @@
 import { exec, ExecOptions } from "child_process";
 import { platform } from "os";
 
+/** runCommand
+ * @desc Runs a command in the shell
+ *  */
 export default function (
+  /** The command to run */
   cmd: string,
+  /** Options to pass to exec */
   opts: ExecOptions = {},
+  /** Timeout in milliseconds */
   timeout?: number
 ): Promise<string> {
   if (platform() === "win32") {
@@ -25,9 +31,10 @@ export default function (
       }
       // @todo: dev code
       resolve(stdout);
+      // const n = Math.random();
       // setTimeout(() => {
-      // Math.random() > 0.5 ? resolve(stdout) : reject(new Error("hello"));
-      // }, 1000);
+      // n > 0.5 ? resolve(stdout) : reject(new Error("hello"));
+      // }, n * 10000);
     });
   });
 }
