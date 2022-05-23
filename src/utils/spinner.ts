@@ -1,10 +1,11 @@
 import chalk from "chalk";
 import ora from "ora";
-import { dots } from "cli-spinners";
 
+/** runCommand
+ * @desc Starts a spinner with the given message
+ *  */
 export default function (text: string) {
   const s = ora({
-    spinner: dots,
     color: "cyan",
     text: chalk.cyan(text),
   });

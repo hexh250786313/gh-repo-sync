@@ -1,9 +1,9 @@
 import { prefix } from "../constants";
-import renderError from "./render-error";
-import renderSucceed from "./render-succeed";
-import runCommand from "./run-command";
-import spinner from "./spinner";
+import { renderError, renderSucceed, runCommand, spinner } from "./";
 
+/** sync
+ * @desc Runs "gh sync repo owner/repo"
+ *  */
 export default async function sync(repo: string) {
   // const { str } = program.opts();
 
@@ -12,14 +12,14 @@ export default async function sync(repo: string) {
   const stepName = `${prefix}Running "gh repo sync ${repo}"`;
   const step = spinner(`${stepName}...`);
 
-  step.start();
-
   try {
-    console.log("");
-    await runCommand(`echo "hello"`);
-    // await runCommand(`gh repo sync ${repo}`);
-    step.stop().succeed(renderSucceed("Done for " + repo));
+    process.stdout.write("\n");
+    // await runCommand(`echo "hello"`);
+    await runCommand(`gh repo sync ${repo}`);
+    step.stop().succeed(renderSucceed("Done for " + repo + "\n"));
   } catch (e) {
-    step.stop().fail(renderError(`Failed for ${repo}\n${e}`));
+    step.stop().fail(renderError(`Failed for ${repo}\n`));
+    process.stdout.write(`${e}\n`);
+    process.stdout.write("-----------------------------\n\n");
   }
 }

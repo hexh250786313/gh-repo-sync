@@ -1,9 +1,9 @@
 const chalk = jest.genMockFromModule("chalk");
 
-chalk.cyan = jest.fn();
-chalk.blue = jest.fn();
-chalk.green = jest.fn();
-chalk.yellow = jest.fn();
-chalk.red = jest.fn();
+chalk.cyan = jest.fn((str) => str);
+chalk.blue = jest.fn((str) => str);
+chalk.green = jest.fn((str) => str);
+chalk.yellow = jest.fn((str) => str);
+chalk.red = jest.fn((str) => str);
 
 module.exports = chalk;

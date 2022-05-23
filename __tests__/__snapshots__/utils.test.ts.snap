@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Unit test for ifExistGH Should print correct error message 1`] = `
+"
+[gh-repo-sync] Error: Command failed: gh: command not found
+
+Please make sure you have github-cli installed: https://github.com/cli/cli#installation
+
+"
+`;
+
+exports[`Unit test for ifLoginGH Should print correct error message 1`] = `
+"
+You are not logged into any GitHub hosts. Run \`gh auth login\` to authenticate.
+
+"
+`;
