@@ -15,3 +15,10 @@ You are not logged into any GitHub hosts. Run \`gh auth login\` to authenticate.
 
 "
 `;
+
+exports[`Unit test for sync Should throw error when repo name invalid 1`] = `
+"Error: Will throw an error from test
+-----------------------------
+
+"
+`;

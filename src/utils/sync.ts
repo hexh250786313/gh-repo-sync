@@ -5,10 +5,6 @@ import { renderError, renderSucceed, runCommand, spinner } from "./";
  * @desc Runs "gh sync repo owner/repo"
  *  */
 export default async function sync(repo: string) {
-  // const { str } = program.opts();
-
-  // program.command();
-
   const stepName = `${prefix}Running "gh repo sync ${repo}"`;
   const step = spinner(`${stepName}...`);
 
@@ -19,7 +15,6 @@ export default async function sync(repo: string) {
     step.stop().succeed(renderSucceed("Done for " + repo + "\n"));
   } catch (e) {
     step.stop().fail(renderError(`Failed for ${repo}\n`));
-    process.stdout.write(`${e}\n`);
-    process.stdout.write("-----------------------------\n\n");
+    process.stdout.write(`${e}\n-----------------------------\n\n`);
   }
 }

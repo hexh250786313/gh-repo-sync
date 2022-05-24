@@ -6,3 +6,4 @@ export { default as renderSucceed } from "./render-succeed";
 export { default as spinner } from "./spinner";
 export { default as ifLoginGH } from "./if-login-gh";
 export { default as ifExistGH } from "./if-exist-gh";
+export { default as isAllArgsValid } from "./is-all-args-valid";

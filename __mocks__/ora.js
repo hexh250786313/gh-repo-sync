@@ -1,8 +1,8 @@
 const result = {
-  start: jest.fn(),
-  stop: jest.fn(),
-  succeed: jest.fn(),
-  fail: jest.fn(),
+  start: jest.fn(() => result),
+  stop: jest.fn(() => result),
+  succeed: jest.fn((str) => str),
+  fail: jest.fn((str) => str),
 };
 const ora = jest.fn(() => result);
 
