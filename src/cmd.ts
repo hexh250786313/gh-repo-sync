@@ -14,7 +14,7 @@ program
   .usage(
     `[ -h | --help ] [ -v | --version ] [ 'owner/repo1' 'owner/repo2' ... ]\n
        You can configure a config file in \`~/.config/gh-repo-sync/config.json\` to help specify repos so that you are not required to pass the arguments.\n
-       See more in https://github.com/hexh250786313/gh-repo-sync#readme.`
+       See more in https://github.com/hexh250786313/gh-repo-sync#usage.`
   )
   .parse(process.argv);
 
