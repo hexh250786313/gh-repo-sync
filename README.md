@@ -12,8 +12,10 @@ Make sure you have github-cli installed and authenticated
 
 ## Install
 
+IT IS `gh-repo-sync-cli`, NOT `gh-repo-sync`!!! The [gh-repo-sync](https://github.com/hrajchert/gh-repo-sync) is another package 🤷
+
 ```shell
-npm install -g gh-repo-sync
+npm install -g gh-repo-sync-cli
 ```
 
 ## Usage
