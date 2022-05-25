@@ -12,9 +12,13 @@ export default async function sync(repo: string) {
     process.stdout.write("\n");
     // await runCommand(`echo "hello"`);
     await runCommand(`gh repo sync ${repo}`);
-    step.stop().succeed(renderSucceed("Done for " + repo + "\n"));
+    step
+      .stop()
+      .succeed(
+        renderSucceed("Done for " + `https://github.com/${repo}` + "\n")
+      );
   } catch (e) {
-    step.stop().fail(renderError(`Failed for ${repo}\n`));
+    step.stop().fail(renderError(`Failed for https://github.com/${repo}\n`));
     process.stdout.write(`${e}\n-----------------------------\n\n`);
   }
 }

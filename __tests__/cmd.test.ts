@@ -1,7 +1,7 @@
 import { run } from "../src/cmd";
-import sync from "../src/utils/sync";
 import ifExistGH from "../src/utils/if-exist-gh";
 import ifLoginGH from "../src/utils/if-login-gh";
+import isAllArgsValid from "../src/utils/is-all-args-valid";
 
 jest.mock("../src/utils/if-exist-gh", () =>
   jest.requireActual("../__mocks__/if-exist-gh.js")
@@ -11,8 +11,8 @@ jest.mock("../src/utils/if-login-gh", () =>
   jest.requireActual("../__mocks__/if-login-gh.js")
 );
 
-jest.mock("../src/utils/sync", () =>
-  jest.requireActual("../__mocks__/sync.js")
+jest.mock("../src/utils/is-all-args-valid", () =>
+  jest.requireActual("../__mocks__/is-all-args-valid.js")
 );
 
 describe("Unit test for cmd", () => {
@@ -34,13 +34,7 @@ describe("Unit test for cmd", () => {
     expect(ifLoginGH).toHaveBeenCalled();
   });
 
-  it("Should call sync with correct args", async () => {
-    const callsArgs = (sync as any).mock.calls;
-    for (let i = 0; i < callsArgs.length; i++) {
-      expect(sync)
-        .toHaveBeenCalledWith
-        // callsArgs[i][0] + (Math.random() > 0.1 ? "" : "1")
-        ();
-    }
+  it("Should check if args are all valid", async () => {
+    expect(isAllArgsValid).toHaveBeenCalled();
   });
 });

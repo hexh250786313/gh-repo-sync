@@ -158,7 +158,7 @@ describe("Unit test for sync", () => {
     await sync("test/testRepo");
     expect(ora().stop).toHaveBeenCalledTimes(calledAmountForOraStart + 1);
     expect(ora().succeed).toHaveBeenLastCalledWith(
-      `${prefix} Done for test/testRepo\n`
+      `${prefix} Done for https://github.com/test/testRepo\n`
     );
   });
 
@@ -166,7 +166,9 @@ describe("Unit test for sync", () => {
     const calledAmountForOraStart = (ora().stop as any).mock.calls.length;
     await sync("hello");
     expect(ora().stop).toHaveBeenCalledTimes(calledAmountForOraStart + 1);
-    expect(ora().fail).toHaveBeenLastCalledWith(`${prefix} Failed for hello\n`);
+    expect(ora().fail).toHaveBeenLastCalledWith(
+      `${prefix} Failed for https://github.com/hello\n`
+    );
   });
 });
 
@@ -176,6 +178,8 @@ describe("Unit test for isAllArgsValid", () => {
   });
 
   it("Should return false when repo name invalid", () => {
-    expect(isAllArgsValid(["test/testRepo", "hello"])).toBeFalsy();
+    expect(
+      isAllArgsValid(["test/testRepo", "hello", "/bbb/aaa/ccc", "bbb/aaa/"])
+    ).toBeFalsy();
   });
 });
