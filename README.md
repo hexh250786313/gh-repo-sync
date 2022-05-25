@@ -32,8 +32,9 @@ gh-repo-sync owner/repo1 owner/repo2
 
 ### via config file
 
+Config in: `~/.config/gh-repo-sync/config.json`
+
 ```json
-// Config in: ~/.config/gh-repo-sync/config.json
 {
   "repos": [
     "owner/repo1",
@@ -44,9 +45,11 @@ gh-repo-sync owner/repo1 owner/repo2
 
 Then run `gh-repo-sync` will sync all the forked repos
 
+It will throw error when there are diverging changes
+
 ## Screenshot
 
-
+![2022-05-25_20-26](https://user-images.githubusercontent.com/26080416/170264027-bf9b5474-d371-43aa-a2d7-f6667ab6b2b0.png)
 
 ## License
 
