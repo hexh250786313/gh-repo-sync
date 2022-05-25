@@ -1,6 +1,6 @@
 {
   "name": "gh-repo-sync",
-  "version": "0.0.0-development",
+  "version": "0.0.1",
   "description": "Running multiple \"gh repo sync owner/cli-fork\" commands to help sync all your forked GitHub repos",
   "main": "lib/index.js",
   "bin": {
