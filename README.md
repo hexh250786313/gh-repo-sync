@@ -1,3 +1,5 @@
+[中文说明](https://blog.hexuhua.vercel.app/post/22)
+
 # gh-repo-sync
 
 A cli running multiple "gh repo sync owner/cli-fork" commands to help sync all your forked GitHub repos
